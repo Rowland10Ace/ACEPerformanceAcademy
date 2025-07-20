@@ -22,6 +22,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
+            /* Changed back to Emerald to Blue */
             background-image: linear-gradient(to right, #6EE7B7, #3B82F6); /* Emerald to Blue */
         }
         .btn-primary {
@@ -63,6 +64,20 @@
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
+
+    <!-- Audio Player for Background Music -->
+    <!--
+        IMPORTANT: Replace 'your-music-file.mp3' with the actual URL to your music file.
+        Ensure you have the legal rights to use the music.
+        'controls' attribute adds play/pause, volume, etc.
+        'loop' attribute makes the music repeat automatically.
+        'autoplay' attribute attempts to play automatically, but modern browsers often block this
+        until the user interacts with the page (e.g., clicks a button).
+    -->
+    <audio controls loop autoplay class="fixed bottom-4 left-4 z-50 rounded-full shadow-lg">
+        <source src="your-music-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <!-- Navigation Bar -->
     <header class="bg-gray-800 bg-opacity-90 shadow-lg fixed w-full z-50">
@@ -106,13 +121,14 @@
             <div class="absolute inset-0 bg-black opacity-100 z-10"></div>
 
             <div class="relative z-20 p-6 max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
                     Unleash Your <span class="text-gradient">True Speed</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up delay-200">
                     Elite Youth High Intensity Speed Training for Tomorrow's Champions.
                 </p>
-                <a href="#programs" class="inline-block btn-primary text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 animate-fade-in-up delay-400">
+                <!-- Added mt-48 to lower the button by approximately 2 inches -->
+                <a href="#programs" class="inline-block btn-primary text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 animate-fade-in-up delay-400 mt-48">
                     Explore Our Programs
                 </a>
             </div>
@@ -134,7 +150,7 @@
                             ACE Performance Academy is dedicated to transforming aspiring young athletes into speed powerhouses. We specialize in high-intensity, scientifically-backed training methodologies designed to maximize athletic potential, enhance agility, and build explosive speed.
                         </p>
                         <p class="mb-6">
-                            Our elite coaching staff brings years of experience working with top-tier athletes, ensuring personalized attention and a challenging yet supportive environment. We believe in nurturing not just physical prowess, but also mental resilience and a champion's mindset.
+                            Our team of enthusiastic and dedicated coaches is passionate about developing the next generation of athletes. While new to the academy, they bring fresh perspectives and a commitment to providing personalized attention in a challenging yet supportive environment. We believe in nurturing not just physical prowess, but also mental resilience and a champion's mindset.
                         </p>
                         <p>
                             Join us to experience the difference of truly elite training and unlock your peak performance.
@@ -189,7 +205,7 @@
                         </p>
                         <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2">
                             <li>Functional Strength Training</li>
-                            <li>Olympic Lifting Basics (Age Appropriate)</li>
+                            <li>Foundational Strength & Conditioning</li>
                             <li>Core Stability & Mobility</li>
                             <li>Injury Prevention Protocols</li>
                         </ul>
@@ -209,7 +225,7 @@
                     <!-- Testimonial 1 -->
                     <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover">
                         <p class="text-gray-300 text-lg italic mb-6">
-                            "ACE Performance Academy completely transformed my game. My speed and agility have improved dramatically, and I feel more confident on the field than ever before!"
+                            "ACE Performance Academy completely transformed my game. My speed and agility have improved dramatically, I feel more confident. I'm getting more playing minutes than ever before and scouts are noticing."
                         </p>
                         <div class="flex items-center">
                             <!-- Placeholder image for athlete John Doe -->
@@ -271,9 +287,10 @@
                         6. Copy the "Request URL" from the 'formResponse' request's Headers tab. This is your 'action' URL.
                         7. In the 'formResponse' request's "Payload" or "Form Data" section, find the 'entry.XXXXXXXXX' IDs for each field.
                         8. Replace the placeholder values below with your actual Google Form Submission URL and Entry IDs.
+                        
+                        To redirect to the top of the homepage after submission, append '#home' to the action URL.
                     -->
-                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyggeav8iTl3CXb5WSPfzVf_nrQm3qEaPPLpNKV1mkYvAlgQ/formResponse
-" method="POST" class="space-y-6">
+                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyggeav8iTl3CXb5WSPfzVf_nrQm3qEaPPLpNKV1mkYvAlgQ/formResponse#home" method="POST" class="space-y-6">
                         <div>
                             <label for="name" class="block text-gray-300 text-lg font-semibold mb-2">Name</label>
                             <input type="text" id="name" name="entry.1949017130" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
@@ -333,7 +350,7 @@
                 <!-- Instagram Icon -->
                 <a href="#" class="hover:text-white transition duration-300" aria-label="Instagram">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.038 1.488.152 2.071.356.7.24 1.255.527 1.81.913.56.397 1.07.892 1.504 1.397.44.506.84 1.059 1.2 1.703.36.645.66 1.34.856 2.1.195.76.288 1.57.288 3.464V12c0 1.9-.093 2.71-.288 3.464-.196.76-.496 1.455-.856 2.1-.354.645-.764 1.198-1.2 1.703-.434.505-.944 1-1.504 1.396-.555.387-1.201.674-2.072.918-.842.036-1.197.048-3.797.048S9.507 22 8.495 21.952c-.843-.038-1.488-.152-2.071-.356-.7-.24-1.255-.527-1.81-.913-.56-.397-1.07-.892-1.504-1.397-.44-.506-.84-1.059-1.2-1.703-.36-.645-.66-1.34-.856-2.1-.195-.76-.288-1.57-.288-3.464V12c0-1.9.093-2.71.288-3.464.196-.76.496-1.455.856-2.1.354-.645.764-1.198 1.2-1.703.434-.505.944-1 1.504-1.396.555-.387 1.201-.674 2.072-.918C9.507 2.002 9.862 2 12.315 2zm0 2.133c-2.349 0-2.686.002-3.62.046-.73.034-1.18.125-1.55.25-.38.128-.68.29-1.02.51-.34.22-.64.49-.9.77-.26.28-.49.59-.68.91-.19.32-.33.68-.45 1.07-.12.39-.18.82-.18 2.05v.001c0 2.349.002 2.686.046 3.62.034.73.125 1.18.25 1.55.128.38.29.68.51 1.02.22.34.49.64.77.9.28.26.59.49.91.68.32.19.68.33 1.07.45.39.12.82.18 2.05.18h.001c2.349 0 2.686-.002 3.62-.046.73-.034 1.18-.125 1.55-.25.38-.128.68-.29 1.02-.51.34-.22.64-.49.9-.77.26-.28.49-.59.68-.91.19-.32.33-.68.45-1.07.12-.39.18-.82.18-2.05v-.001c0-2.349-.002-2.686-.046-3.62-.034-.73-.125-1.18-.25-1.55-.128-.38-.29-.68-.51-1.02-.22-.34-.49-.64-.77-.9-.28-.26-.59-.49-.91-.68-.32-.19-.68-.33-1.07-.45-.39-.12-.82-.18-2.05-.18zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm6.5-.5a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.038 1.488.152 2.071.356.7.24 1.255.527 1.81.913.56.397 1.07.892 1.504 1.397.44.506.84 1.059 1.2 1.703.36.645.66 1.34.856 2.1.195.76.288 1.57.288 3.464V12c0 1.9-.093 2.71-.288 3.464-.196.76-.496 1.455-.856 2.1-.354.645-.764 1.198-1.2 1.703-.434.505-.944 1-1.504 1.396-.555.387-1.201.674-2.072.918-.842.036-1.197.048-3.797.048S9.507 22 8.495 21.952c-.843-.038-1.488-.152-2.071-.356-.7-.24-1.255-.527-1.81-.913-.56-.397-1.07-.892-1.504-1.397-.44-.506-.84-1.059-1.2-1.703-.36-.645-.66-1.34-.856-2.1-.195-.76-.288-1.57-.288-3.464V12c0-1.9.093-2.71.288-3.464.196-.76.496-1.455.856-2.1.354-.645-.764-1.198-1.2 1.703-.434.505-.944 1-1.504 1.396-.555.387-1.201.674-2.072.918C9.507 2.002 9.862 2 12.315 2zm0 2.133c-2.349 0-2.686.002-3.62.046-.73.034-1.18.125-1.55.25-.38.128-.68.29-1.02.51-.34.22-.64.49-.9.77-.26.28-.49.59-.68.91-.19.32-.33.68-.45 1.07-.12.39-.18.82-.18 2.05v.001c0 2.349.002 2.686.046 3.62.034.73.125 1.18.25 1.55.128.38.29.68.51 1.02.22.34.49.64.77.9.28.26.59.49.91.68.32.19.68.33 1.07.45.39.12.82.18 2.05.18h.001c2.349 0 2.686-.002 3.62-.046.73-.034 1.18-.125 1.55-.25.38-.128.68-.29 1.02-.51.34-.22.64-.49.9-.77.26-.28.49-.59.68-.91.19-.32.33-.68.45-1.07.12-.39.18-.82.18-2.05v-.001c0-2.349-.002-2.686-.046-3.62-.034-.73-.125-1.18-.25-1.55-.128-.38-.29-.68-.51-1.02-.22-.34-.49-.64-.77-.9-.28-.26-.59-.49-.91-.68-.32-.19-.68-.33-1.07-.45-.39-.12-.82-.18-2.05-.18zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm6.5-.5a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" clip-rule="evenodd" />
                     </svg>
                 </a>
                 <!-- Twitter Icon -->
