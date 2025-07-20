@@ -22,7 +22,6 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            /* Changed back to Emerald to Blue */
             background-image: linear-gradient(to right, #6EE7B7, #3B82F6); /* Emerald to Blue */
         }
         .btn-primary {
@@ -37,47 +36,9 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        /* Keyframe animations for hero section */
-        @keyframes fadeInFromBottom {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInFromBottom 0.8s ease-out forwards;
-            opacity: 0; /* Start invisible */
-        }
-
-        .animate-fade-in-up.delay-200 {
-            animation-delay: 0.2s;
-        }
-
-        .animate-fade-in-up.delay-400 {
-            animation-delay: 0.4s;
-        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
-
-    <!-- Audio Player for Background Music -->
-    <!--
-        IMPORTANT: Replace 'your-music-file.mp3' with the actual URL to your music file.
-        Ensure you have the legal rights to use the music.
-        'controls' attribute adds play/pause, volume, etc.
-        'loop' attribute makes the music repeat automatically.
-        'autoplay' attribute attempts to play automatically, but modern browsers often block this
-        until the user interacts with the page (e.g., clicks a button).
-    -->
-    <audio controls loop autoplay class="fixed bottom-4 left-4 z-50 rounded-full shadow-lg">
-        <source src="your-music-file.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
     <!-- Navigation Bar -->
     <header class="bg-gray-800 bg-opacity-90 shadow-lg fixed w-full z-50">
@@ -117,18 +78,17 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-            <!-- Background overlay for dark effect -->
-            <div class="absolute inset-0 bg-black opacity-100 z-10"></div>
+            <!-- Removed Background Image -->
+            <div class="absolute inset-0 bg-black opacity-100 z-10"></div> <!-- Changed opacity to 100 -->
 
             <div class="relative z-20 p-6 max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 animate-fade-in-up">
                     Unleash Your <span class="text-gradient">True Speed</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up delay-200">
-                    Elite Youth High Intensity Speed Training for Tomorrow's Champions.
+                    High Intensity Youth Speed Training for Tomorrow's Champions.
                 </p>
-                <!-- Added mt-48 to lower the button by approximately 2 inches -->
-                <a href="#programs" class="inline-block btn-primary text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 animate-fade-in-up delay-400 mt-48">
+                <a href="#programs" class="inline-block btn-primary text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 animate-fade-in-up delay-400">
                     Explore Our Programs
                 </a>
             </div>
@@ -142,7 +102,6 @@
                 </h2>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2">
-                        <!-- Placeholder image for team training -->
                         <img src="https://placehold.co/600x400/2d3748/ffffff?text=Team+Training" alt="Youth athletes training" class="rounded-xl shadow-2xl w-full h-auto object-cover">
                     </div>
                     <div class="md:w-1/2 text-lg text-gray-300 leading-relaxed">
@@ -150,7 +109,7 @@
                             ACE Performance Academy is dedicated to transforming aspiring young athletes into speed powerhouses. We specialize in high-intensity, scientifically-backed training methodologies designed to maximize athletic potential, enhance agility, and build explosive speed.
                         </p>
                         <p class="mb-6">
-                            Our team of enthusiastic and dedicated coaches is passionate about developing the next generation of athletes. While new to the academy, they bring fresh perspectives and a commitment to providing personalized attention in a challenging yet supportive environment. We believe in nurturing not just physical prowess, but also mental resilience and a champion's mindset.
+                            Our elite coaching staff brings years of experience working with top-tier athletes, ensuring personalized attention and a challenging yet supportive environment. We believe in nurturing not just physical prowess, but also mental resilience and a champion's mindset.
                         </p>
                         <p>
                             Join us to experience the difference of truly elite training and unlock your peak performance.
@@ -167,49 +126,48 @@
                     Our <span class="text-gradient">Elite Programs</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Program Card 1: Speed & Agility Mastery -->
-                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover">
+                    <!-- Program Card 1 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover flex flex-col">
                         <h3 class="text-3xl font-bold mb-4 text-white">Speed & Agility Mastery</h3>
                         <p class="text-gray-300 mb-6">
                             Focused on fundamental speed mechanics, acceleration, deceleration, and multi-directional agility drills. Perfect for athletes looking to gain a competitive edge.
                         </p>
-                        <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2">
+                        <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2 flex-grow">
                             <li>Explosive Starts & Acceleration</li>
                             <li>Change of Direction Drills</li>
                             <li>Reactive Agility Training</li>
                             <li>Plyometrics for Power</li>
                         </ul>
-                        <a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition duration-300">Learn More</a>
+                        <a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition duration-300 mt-auto">Learn More</a>
                     </div>
 
-                    <!-- Program Card 2: High-Intensity Sprint Cycles -->
-                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover">
+                    <!-- Program Card 2 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover flex flex-col">
                         <h3 class="text-3xl font-bold mb-4 text-white">High-Intensity Sprint Cycles</h3>
                         <p class="text-gray-300 mb-6">
                             Advanced program for athletes aiming to significantly improve top-end speed and maintain high velocity over distance.
                         </p>
-                        <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2">
+                        <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2 flex-grow">
                             <li>Max Velocity Training</li>
                             <li>Speed Endurance Drills</li>
                             <li>Lactate Threshold Work</li>
                             <li>Advanced Sprint Mechanics</li>
                         </ul>
-                        <a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition duration-300">Learn More</a>
+                        <a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition duration-300 mt-auto">Learn More</a>
                     </div>
 
-                    <!-- Program Card 3: Strength & Power Foundation -->
-                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover">
+                    <!-- Program Card 3 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover flex flex-col">
                         <h3 class="text-3xl font-bold mb-4 text-white">Strength & Power Foundation</h3>
                         <p class="text-gray-300 mb-6">
                             Complementary training to build the foundational strength and power necessary for explosive speed and injury prevention.
                         </p>
-                        <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2">
+                        <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2 flex-grow">
                             <li>Functional Strength Training</li>
-                            <li>Foundational Strength & Conditioning</li>
                             <li>Core Stability & Mobility</li>
-                            <li>Injury Prevention Protocols</li>
+                            <li>Injury Prevention</li>
                         </ul>
-                        <a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition duration-300">Learn More</a>
+                        <a href="#contact" class="inline-block btn-primary text-white font-bold py-3 px-6 rounded-full shadow-md hover:shadow-lg transition duration-300 mt-auto">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -225,13 +183,12 @@
                     <!-- Testimonial 1 -->
                     <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform transition duration-300 card-hover">
                         <p class="text-gray-300 text-lg italic mb-6">
-                            "ACE Performance Academy completely transformed my game. My speed and agility have improved dramatically, I feel more confident. I'm getting more playing minutes than ever before and scouts are noticing."
+                            "ACE Performance Academy completely transformed my game. My speed and agility have improved dramatically, and I feel more confident on the field than ever before!"
                         </p>
                         <div class="flex items-center">
-                            <!-- Placeholder image for athlete John Doe -->
-                            <img src="https://placehold.co/60x60/333/ffffff?text=JD" alt="Athlete John Doe" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/60x60/333/ffffff?text=CD" alt="Athlete Colton" class="w-16 h-16 rounded-full object-cover mr-4">
                             <div>
-                                <p class="font-bold text-white text-xl">John Doe</p>
+                                <p class="font-bold text-white text-xl">Colton</p>
                                 <p class="text-gray-400">High School Football Player</p>
                             </div>
                         </div>
@@ -243,10 +200,9 @@
                             "The coaches at ACE are incredible. They push you to your limits but also provide the support and guidance needed to excel. Best training I've ever had!"
                         </p>
                         <div class="flex items-center">
-                            <!-- Placeholder image for athlete Jane Smith -->
-                            <img src="https://placehold.co/60x60/333/ffffff?text=JS" alt="Athlete Jane Smith" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/60x60/333/ffffff?text=ES" alt="Athlete Eli" class="w-16 h-16 rounded-full object-cover mr-4">
                             <div>
-                                <p class="font-bold text-white text-xl">Jane Smith</p>
+                                <p class="font-bold text-white text-xl">Eli</p>
                                 <p class="text-gray-400">Club Soccer Player</p>
                             </div>
                         </div>
@@ -277,52 +233,47 @@
                     Get In <span class="text-gradient">Touch</span>
                 </h2>
                 <div class="bg-gray-800 rounded-xl shadow-xl p-8 md:p-12">
-                    <!--
-                        IMPORTANT: To link this form to a Google Sheet:
-                        1. Create a Google Form with fields matching your HTML form (Name, Email, Phone Number, Preferred Contact Method (checkboxes), Message).
-                        2. In your Google Form, click "Send", then go to the "Link" tab.
-                        3. Fill out your Google Form with dummy data in your browser.
-                        4. BEFORE SUBMITTING, open browser developer tools (F12), go to the "Network" tab.
-                        5. Submit the Google Form. In the Network tab, find the 'formResponse' request.
-                        6. Copy the "Request URL" from the 'formResponse' request's Headers tab. This is your 'action' URL.
-                        7. In the 'formResponse' request's "Payload" or "Form Data" section, find the 'entry.XXXXXXXXX' IDs for each field.
-                        8. Replace the placeholder values below with your actual Google Form Submission URL and Entry IDs.
-                        
-                        To redirect to the top of the homepage after submission, append '#home' to the action URL.
-                    -->
-                    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyggeav8iTl3CXb5WSPfzVf_nrQm3qEaPPLpNKV1mkYvAlgQ/formResponse#home" method="POST" class="space-y-6">
+                    <!-- IMPORTANT: Replace the 'action' URL and 'name' attributes with your actual Google Form's pre-filled link values -->
+                    <form action="https://aceperformanceacademy.com" method="POST" class="space-y-6" target="_top">
                         <div>
                             <label for="name" class="block text-gray-300 text-lg font-semibold mb-2">Name</label>
-                            <input type="text" id="name" name="entry.1949017130" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+                            <!-- Replace entry.XXXXXXXXX with the actual entry ID for 'Name' from your Google Form -->
+                            <input type="text" id="name" name="entry.123456789" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
                         </div>
                         <div>
                             <label for="email" class="block text-gray-300 text-lg font-semibold mb-2">Email</label>
-                            <input type="email" id="email" name="entry.480177306" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com" required>
+                            <!-- Replace entry.XXXXXXXXX with the actual entry ID for 'Email' from your Google Form -->
+                            <input type="email" id="email" name="entry.987654321" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com" required>
                         </div>
                         <div>
                             <label for="phone" class="block text-gray-300 text-lg font-semibold mb-2">Phone Number</label>
-                            <input type="tel" id="phone" name="entry.73753709" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(123) 456-7890">
+                            <!-- Replace entry.XXXXXXXXX with the actual entry ID for 'Phone Number' from your Google Form -->
+                            <input type="tel" id="phone" name="entry.112233445" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(123) 456-7890">
                         </div>
                         <div>
                             <label class="block text-gray-300 text-lg font-semibold mb-2">Preferred Contact Method</label>
                             <div class="flex flex-col space-y-2">
                                 <label class="inline-flex items-center text-gray-300">
-                                    <input type="checkbox" name="entry.577700452" value="Email" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
+                                    <!-- Replace entry.XXXXXXXXX with the actual entry ID for 'Preferred Contact Method' from your Google Form -->
+                                    <input type="checkbox" name="entry.556677889" value="Email" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
                                     <span class="ml-2">Email</span>
                                 </label>
                                 <label class="inline-flex items-center text-gray-300">
-                                    <input type="checkbox" name="entry.577700452" value="Phone" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
+                                    <!-- Use the same entry ID for all checkboxes in the group -->
+                                    <input type="checkbox" name="entry.556677889" value="Phone" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
                                     <span class="ml-2">Phone</span>
                                 </label>
                                 <label class="inline-flex items-center text-gray-300">
-                                    <input type="checkbox" name="entry.577700452" value="Text" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
+                                    <!-- Use the same entry ID for all checkboxes in the group -->
+                                    <input type="checkbox" name="entry.556677889" value="Text" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
                                     <span class="ml-2">Text</span>
                                 </label>
                             </div>
                         </div>
                         <div>
                             <label for="message" class="block text-gray-300 text-lg font-semibold mb-2">Message</label>
-                            <textarea id="message" name="entry.670863346" rows="6" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your goals..." required></textarea>
+                            <!-- Replace entry.XXXXXXXXX with the actual entry ID for 'Message' from your Google Form -->
+                            <textarea id="message" name="entry.998877665" rows="6" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your goals..." required></textarea>
                         </div>
                         <button type="submit" class="w-full btn-primary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
                             Send Message
@@ -341,20 +292,17 @@
         <div class="container mx-auto max-w-6xl">
             <p class="mb-4">&copy; 2024 ACE Performance Academy. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
-                <!-- Facebook Icon -->
-                <a href="#" class="hover:text-white transition duration-300" aria-label="Facebook">
+                <a href="#" class="hover:text-white transition duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C17.34 21.128 22 16.991 22 12z" clip-rule="evenodd" />
                     </svg>
                 </a>
-                <!-- Instagram Icon -->
-                <a href="#" class="hover:text-white transition duration-300" aria-label="Instagram">
+                <a href="#" class="hover:text-white transition duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.038 1.488.152 2.071.356.7.24 1.255.527 1.81.913.56.397 1.07.892 1.504 1.397.44.506.84 1.059 1.2 1.703.36.645.66 1.34.856 2.1.195.76.288 1.57.288 3.464V12c0 1.9-.093 2.71-.288 3.464-.196.76-.496 1.455-.856 2.1-.354.645-.764 1.198-1.2 1.703-.434.505-.944 1-1.504 1.396-.555.387-1.201.674-2.072.918-.842.036-1.197.048-3.797.048S9.507 22 8.495 21.952c-.843-.038-1.488-.152-2.071-.356-.7-.24-1.255-.527-1.81-.913-.56-.397-1.07-.892-1.504-1.397-.44-.506-.84-1.059-1.2-1.703-.36-.645-.66-1.34-.856-2.1-.195-.76-.288-1.57-.288-3.464V12c0-1.9.093-2.71.288-3.464.196-.76.496-1.455.856-2.1.354-.645-.764-1.198-1.2 1.703-.434.505-.944 1-1.504 1.396-.555.387-1.201.674-2.072.918C9.507 2.002 9.862 2 12.315 2zm0 2.133c-2.349 0-2.686.002-3.62.046-.73.034-1.18.125-1.55.25-.38.128-.68.29-1.02.51-.34.22-.64.49-.9.77-.26.28-.49.59-.68.91-.19.32-.33.68-.45 1.07-.12.39-.18.82-.18 2.05v.001c0 2.349.002 2.686.046 3.62.034.73.125 1.18.25 1.55.128.38.29.68.51 1.02.22.34.49.64.77.9.28.26.59.49.91.68.32.19.68.33 1.07.45.39.12.82.18 2.05.18h.001c2.349 0 2.686-.002 3.62-.046.73-.034 1.18-.125 1.55-.25.38-.128.68-.29 1.02-.51.34-.22.64-.49.9-.77.26-.28.49-.59.68-.91.19-.32.33-.68.45-1.07.12-.39.18-.82.18-2.05v-.001c0-2.349-.002-2.686-.046-3.62-.034-.73-.125-1.18-.25-1.55-.128-.38-.29-.68-.51-1.02-.22-.34-.49-.64-.77-.9-.28-.26-.59-.49-.91-.68-.32-.19-.68-.33-1.07-.45-.39-.12-.82-.18-2.05-.18zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm6.5-.5a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.038 1.488.152 2.071.356.7.24 1.255.527 1.81.913.56.397 1.07.892 1.504 1.397.44.506.84 1.059 1.2 1.703.36.645.66 1.34.856 2.1.195.76.288 1.57.288 3.464V12c0 1.9-.093 2.71-.288 3.464-.196.76-.496 1.455-.856 2.1-.354.645-.764 1.198-1.2 1.703-.434.505-.944 1-1.504 1.396-.555.387-1.201.674-2.072.918-.842.036-1.197.048-3.797.048S9.507 22 8.495 21.952c-.843-.038-1.488-.152-2.071-.356-.7-.24-1.255-.527-1.81-.913-.56-.397-1.07-.892-1.504-1.397-.44-.506-.84-1.059-1.2-1.703-.36-.645-.66-1.34-.856-2.1-.195-.76-.288-1.57-.288-3.464V12c0-1.9.093-2.71.288-3.464.196-.76.496-1.455.856-2.1.354-.645.764-1.198 1.2-1.703.434-.505.944-1 1.504-1.396.555-.387 1.201-.674 2.072-.918C9.507 2.002 9.862 2 12.315 2zm0 2.133c-2.349 0-2.686.002-3.62.046-.73.034-1.18.125-1.55.25-.38.128-.68.29-1.02.51-.34.22-.64.49-.9.77-.26.28-.49.59-.68.91-.19.32-.33.68-.45 1.07-.12.39-.18.82-.18 2.05v.001c0 2.349.002 2.686.046 3.62.034.73.125 1.18.25 1.55.128.38.29.68.51 1.02.22.34.49.64.77.9.28.26.59.49.91.68.32.19.68.33 1.07.45.39.12.82.18 2.05.18h.001c2.349 0 2.686-.002 3.62-.046.73-.034 1.18-.125 1.55-.25.128-.38.29-.68.51-1.02.22-.34.49-.64-.77-.9-.28-.26-.59-.49-.91-.68-.19-.32-.33-.68-.45-1.07-.12-.39-.18-.82-.18-2.05v-.001c0-2.349-.002-2.686-.046-3.62-.034-.73-.125-1.18-.25-1.55-.128-.38-.29-.68-.51-1.02-.22-.34-.49-.64-.77-.9-.28-.26-.59-.49-.91-.68-.32-.19-.68-.33-1.07-.45-.39-.12-.82-.18-2.05-.18zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm6.5-.5a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" clip-rule="evenodd" />
                     </svg>
                 </a>
-                <!-- Twitter Icon -->
-                <a href="#" class="hover:text-white transition duration-300" aria-label="Twitter">
+                <a href="#" class="hover:text-white transition duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012 10.77v.058a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.235a11.616 11.616 0 006.29 1.984z" />
                     </svg>
@@ -369,19 +317,15 @@
         const closeMobileMenuButton = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        // Event listener to open the mobile menu
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
         });
 
-        // Event listener to close the mobile menu
         closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
 
-        // Close mobile menu when a navigation link inside it is clicked
-        // This is handled by inline onclick attributes in the HTML for simplicity,
-        // but could also be done with event delegation here.
+        // Close mobile menu when a link is clicked (handled by inline onclick)
     </script>
 </body>
 </html>
