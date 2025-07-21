@@ -222,49 +222,8 @@
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">
                     Get In <span class="text-gradient">Touch</span>
                 </h2>
-                <div class="bg-gray-800 rounded-xl shadow-xl p-8 md:p-12">
-                    <form id="google-form" action="https://docs.google.com/forms/d/e/1FAIpQLSftK85cR-XqaWtqn0h0Zff2NUrOgGnrtP0hYZyHAhzXnmyyYA/formResponse" method="POST" target="hidden_iframe" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-gray-300 text-lg font-semibold mb-2">Name</label>
-                            <input type="text" id="name" name="entry.2005620554" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-300 text-lg font-semibold mb-2">Email</label>
-                            <input type="email" id="email" name="entry.1045781291" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com" required>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-gray-300 text-lg font-semibold mb-2">Phone Number</label>
-                            <input type="tel" id="phone" name="entry.1065046570" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(123) 456-7890">
-                        </div>
-                        <div>
-                            <label class="block text-gray-300 text-lg font-semibold mb-2">Preferred Contact Method</label>
-                            <div class="flex flex-col space-y-2">
-                                <label class="inline-flex items-center text-gray-300">
-                                    <input type="checkbox" name="entry.1166974658" value="Email" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
-                                    <span class="ml-2">Email</span>
-                                </label>
-                                <label class="inline-flex items-center text-gray-300">
-                                    <input type="checkbox" name="entry.1166974658" value="Phone" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
-                                    <span class="ml-2">Phone</span>
-                                </label>
-                                <label class="inline-flex items-center text-gray-300">
-                                    <input type="checkbox" name="entry.1166974658" value="Text" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500">
-                                    <span class="ml-2">Text</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-300 text-lg font-semibold mb-2">Message</label>
-                            <textarea id="message" name="entry.839337160" rows="6" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your goals..." required></textarea>
-                        </div>
-                        <button type="submit" class="w-full btn-primary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                            Send Message
-                        </button>
-                    </form>
-                    <div id="form-message" class="mt-6 text-center text-green-400"></div>
-                    <div class="mt-10 text-center text-gray-400">
-                        <p class="mb-2"><strong>Email:</strong> info@aceperformance.com</p>
-                    </div>
+                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSftK85cR-XqaWtqn0h0Zff2NUrOgGnrtP0hYZyHAhzXnmyyYA/viewform?embedded=true" width="100%" height="1050" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
             </div>
         </section>
@@ -281,8 +240,6 @@
             </div>
         </div>
     </footer>
-    
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -294,30 +251,6 @@
             mobileMenuButton.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
             closeMobileMenuButton.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             mobileMenuLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-            const googleForm = document.getElementById('google-form');
-            const formMessage = document.getElementById('form-message');
-            const hiddenIframe = document.getElementById('hidden_iframe');
-            let formSubmitted = false;
-
-            if (googleForm) {
-                googleForm.addEventListener('submit', () => {
-                    formSubmitted = true;
-                });
-            }
-
-            if (hiddenIframe) {
-                hiddenIframe.addEventListener('load', () => {
-                    if (formSubmitted) {
-                        formMessage.textContent = 'Thank you! Your message has been sent.';
-                        googleForm.reset();
-                        formSubmitted = false; // Reset for next submission
-                        setTimeout(() => {
-                            formMessage.textContent = '';
-                        }, 5000);
-                    }
-                });
-            }
         });
     </script>
 </body>
