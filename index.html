@@ -86,9 +86,11 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-            <div class="absolute inset-0 bg-black z-10"></div>
+            <div class="absolute inset-0 bg-black z-10">
+                 <!-- Image removed as requested -->
+            </div>
             <div class="relative z-20 p-6 max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up whitespace-nowrap">
                     Unleash Your <span class="text-gradient">True Speed</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up" style="animation-delay: 0.2s;">
@@ -101,7 +103,7 @@
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="py-20 px-4 bg-gray-950">
+        <section id="about" class="py-20 px-4 bg-gray-900">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">
                     About <span class="text-gradient">ACE Performance</span> Academy
@@ -115,10 +117,13 @@
                             ACE Performance Academy is dedicated to transforming aspiring young athletes into speed powerhouses. We specialize in high-intensity, scientifically-backed training methodologies designed to maximize athletic potential, enhance agility, and build explosive speed.
                         </p>
                         <p class="mb-6">
-                            Our elite coaching staff brings years of experience working with top-tier athletes, ensuring personalized attention and a challenging yet supportive environment. We believe in nurturing not just physical prowess, but also mental resilience and a champion's mindset.
+                            We utilize performance testing to track progress and provide athletes with tangible, measured results. This data-driven approach allows us to tailor our programs and ensure every athlete is on the optimal path to improvement.
+                        </p>
+                         <p class="mb-6">
+                            Beyond the physical, our philosophy emphasizes the importance of character development and mental fortitude. We instill discipline, resilience, and a strong work ethic, preparing athletes not just for competition, but for life's challenges.
                         </p>
                         <p>
-                            Join us to experience the difference of truly elite training and unlock your peak performance.
+                            Join us to experience the difference of truly elite training and unlock your peak performance in a fun and rewarding environment.
                         </p>
                     </div>
                 </div>
@@ -126,7 +131,7 @@
         </section>
 
         <!-- Programs Section -->
-        <section id="programs" class="py-20 px-4 bg-gray-900">
+        <section id="programs" class="py-20 px-4 bg-gray-950">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">
                     Our <span class="text-gradient">Elite Programs</span>
@@ -180,7 +185,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 px-4 bg-gray-950">
+        <section id="testimonials" class="py-20 px-4 bg-gray-900">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">
                     What Our <span class="text-gradient">Athletes Say</span>
@@ -195,7 +200,7 @@
                             <img src="https://placehold.co/60x60/333/ffffff?text=CD" alt="Athlete Colton" class="w-16 h-16 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-bold text-white text-xl">Colton</p>
-                                <p class="text-gray-400">High School Football Player</p>
+                                <p class="text-gray-400">Football Player</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +214,7 @@
                             <img src="https://placehold.co/60x60/333/ffffff?text=ES" alt="Athlete Eli" class="w-16 h-16 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-bold text-white text-xl">Eli</p>
-                                <p class="text-gray-400">Club Soccer Player</p>
+                                <p class="text-gray-400">Elite Club Soccer Player</p>
                             </div>
                         </div>
                     </div>
@@ -233,7 +238,7 @@
         </section>
 
         <!-- Contact Us Section -->
-        <section id="contact" class="py-20 px-4 bg-gray-900">
+        <section id="contact" class="py-20 px-4 bg-gray-950">
             <div class="container mx-auto max-w-4xl">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-white">
                     Get In <span class="text-gradient">Touch</span>
@@ -287,7 +292,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 py-10 px-4 text-center text-gray-400">
+    <footer class="bg-gray-900 py-10 px-4 text-center text-gray-400">
         <div class="container mx-auto max-w-6xl">
             <p class="mb-4">&copy; 2025 ACE Performance Academy. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
@@ -321,7 +326,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // This button only exists in the old overlay, but we keep the listener for safety.
         if (closeMobileMenuButton) {
             closeMobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -333,32 +337,8 @@
                 mobileMenu.classList.add('hidden');
             });
         });
-    </script>
-    
-    <script>
-        /*
-            **********************************
-            *** IMPORTANT FIX FOR THE FORM ***
-            **********************************
-
-            The error "Exception: Invalid argument: id" means your Google Apps Script
-            has not been properly initialized and doesn't know which spreadsheet to use.
-
-            TO FIX THIS, YOU MUST RUN THE `intialSetup` FUNCTION MANUALLY ONE TIME:
-
-            1. Go to your Google Sheet and open the Apps Script editor (Extensions > Apps Script).
-            2. At the top of the editor, there is a dropdown menu that probably says "doPost".
-               Click it and select "intialSetup" instead.
-            3. Click the "Run" button next to the dropdown.
-            4. A popup will ask for authorization. Grant the permissions. This tells the script
-               it's allowed to edit your sheet.
-            5. That's it! The script now knows the ID of your spreadsheet and the form will work.
-               You only need to do this once.
-
-            If the form still fails after this, ensure you have also updated the `doPost`
-            function with the corrected code from the previous step to handle blank fields.
-        */
-
+        
+        // --- Google Sheet Form Submission ---
         const form = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyUKQUKD7YFeTy4nRzL_2eRUlcrHlL96P63MSLq5QbtdD5bmWe6NfNr1z92zV4ZVdU8/exec';
@@ -384,18 +364,12 @@
                         form.reset();
                     } else {
                         console.error('Google Script Error Object:', JSON.stringify(data, null, 2));
-                        if (data.details && data.details.includes("Invalid argument: id")) {
-                           formStatus.innerHTML = '<p class="text-red-400">Configuration Error: The Google Script is not linked to a spreadsheet. Please follow the troubleshooting steps in the HTML comments.</p>';
-                        } else {
-                           throw new Error('Form submission failed due to a server-side script error. See console for details.');
-                        }
+                        throw new Error('Form submission failed due to a server-side script error.');
                     }
                 })
                 .catch(error => {
                     console.error('Fetch/Script Error!', error.message);
-                    if (!formStatus.innerHTML) { // Avoid overwriting the specific error message
-                        formStatus.innerHTML = '<p class="text-red-400">An error occurred. Please follow the instructions in the HTML comments to fix your Google Apps Script and redeploy it.</p>';
-                    }
+                    formStatus.innerHTML = '<p class="text-red-400">An error occurred. Please try again later.</p>';
                 })
                 .finally(() => {
                     submitButton.disabled = false;
